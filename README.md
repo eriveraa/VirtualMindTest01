@@ -1,7 +1,5 @@
 # VirtualMind Test Project
 
-
-
 **Technologies used**: ASP.Net Core WebApi 5, Entity Framework Core, SQL Server 2019, Logging (Serilog). The project covers the following:
 
 - A solution with different layers and projects (API, Business logic, Data Access Layer and Common).
@@ -9,7 +7,7 @@
 - Logging capabilities with Serilog.
 - Flexible configuration in Appsetings.json
 - API layer with controller using different routing for each process and http status codes.
-- Swagger enabled feature to view API methods and execution test.
+- Descriptive API endpoints with Swagger.
 - Business Logic Layer with object-oriented design.
 - Data access with Entity Framework Core.
 - HttpClient with best practices to avoid memory leaking.
@@ -46,9 +44,7 @@ GO
 ## Appsetings.json Configuration
 
 - Update the connection string **"cs01"** in **appsetings.json** file. Target to your local database and set the user and password required.
-
 - Update the logging parameters if required. By default the application logs to Console and File (generated in logs folder).
-
 - In the MyAppConfig section, specify the parameters / configuration for each endpoint that provides exchange data to the application and the maximum purchase per month/user.
 
 ```json
@@ -110,11 +106,12 @@ Compile the solution and RUN the EMT.API project in Visual Studio:
 
 Compile the solution and RUN the EMT.API project in Visual Studio.:
 
-The WebApi has two endpoints:
+The WebApi has two endpoints and swagger endpoint:
 
 1. Endpoint for retrieving exchange rate.
    
    Url (GET): https://localhost:5001/api/ExchangeRate/getexchangetoars/USD
+   (You can use USD or BRL)
 
 2. Endpoint for making a purchase/exchange
    
@@ -129,21 +126,14 @@ The WebApi has two endpoints:
    "IsoCurrencyCode": "BRL"
    } 
    ```
-
-
-
+3. Swagger endpoint: https://localhost:5001/swagger/index.html
 
 
 ## Credits
-
 Created by Eduardo (eriveraa@gmail.com)
 
 
-
-
-
 ## Project requirements
-
 Create a web app API using .NET to expose two endpoints:
 
 1) The first one will retrieve the exchange rate from that day for a given currency, where the

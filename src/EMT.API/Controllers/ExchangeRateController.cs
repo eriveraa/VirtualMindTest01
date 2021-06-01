@@ -7,6 +7,7 @@ using EMT.Common;
 using EMT.API.ApiUtils;
 using EMT.BLL.DTOs;
 using Microsoft.AspNetCore.Http;
+using EMT.Common.ResponseWrappers;
 
 namespace EMT.API.Controllers
 {
@@ -23,17 +24,16 @@ namespace EMT.API.Controllers
         [HttpGet("getexchangetoars/{isoCurrencyCode}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Get(string isoCurrencyCode)
+        public async Task<ActionResult<BaseResult<GetExchangeRateResponseDto>>> Get(string isoCurrencyCode)
         {
             var response = await _service.GetExchangeRateByIsoCode(isoCurrencyCode);
-            if (response.Data == null) return NotFound();
             return Ok(response);
         }
 
         [HttpPost("purchase")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Post([FromBody] PurchaseRequestDto purchaseRequest)
+        public async Task<ActionResult<BaseResult<PurchaseResponseDto>>> Post([FromBody] PurchaseRequestDto purchaseRequest)
         {
             var response = await _service.MakePurchase(purchaseRequest);
             return Created("", response);
