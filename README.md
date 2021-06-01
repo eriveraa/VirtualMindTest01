@@ -55,7 +55,7 @@ GO
 
 - Update the connection string **"cs01"** in **appsetings.json** file. Target to your local database and set the user and password required.
 
-- Update the logging parameters if required. By default the appilication logs to Console and File (generated in logs folder).
+- Update the logging parameters if required. By default the application logs to Console and File (generated in logs folder).
 
 - In the MyAppConfig section, specify the parameters / configuration for each endpoint that provides exchange data to the application and the maximum purchase per month/user.
 
