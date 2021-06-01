@@ -5,22 +5,14 @@
 **Technologies used**: ASP.Net Core WebApi 5, Entity Framework Core, SQL Server 2019, Logging (Serilog). The project covers the following:
 
 - A solution with different layers and projects (API, Business logic, Data Access Layer and Common).
-
 - Global exception handler in Startup.cs
-
 - Logging capabilities with Serilog.
-
 - Flexible configuration in Appsetings.json
-
 - API layer with controller using different routing for each process and http status codes.
-
+- Swagger enabled feature to view API methods and execution test.
 - Business Logic Layer with object-oriented design.
-
 - Data access with Entity Framework Core.
-
 - HttpClient with best practices to avoid memory leaking.
-
-
 
 **Technologies used**: ASP.Net Core WebApi 5, Entity Framework Core, SQL Server 2019.
 
