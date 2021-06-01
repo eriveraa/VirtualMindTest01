@@ -1,15 +1,15 @@
 # VirtualMind Test Project
 
-**Technologies used**: ASP.Net Core WebApi 5, Entity Framework Core, SQL Server 2019, Logging (Serilog). The project covers the following:
+The project covers the following:
 
 - A solution with different layers and projects (API, Business logic, Data Access Layer and Common).
 - Global exception handler in Startup.cs
-- Logging capabilities with Serilog.
+- Logging capabilities with Serilog (Console and File).
 - Flexible configuration in Appsetings.json
 - API layer with controller using different routing for each process and http status codes.
 - Descriptive API endpoints with Swagger.
 - Business Logic Layer with object-oriented design.
-- Data access with Entity Framework Core.
+- Data access with Entity Framework Core and SQL Server.
 - HttpClient with best practices to avoid memory leaking.
 
 **Technologies used**: ASP.Net Core WebApi 5, Entity Framework Core, SQL Server 2019.
