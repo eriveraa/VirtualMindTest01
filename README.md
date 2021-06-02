@@ -108,10 +108,8 @@ Compile the solution and RUN the EMT.API project in Visual Studio:
 
 ## Run and execute the FrontEnd app
 
-1. Install all the node packages   
-   npm install
-2. Run the angular application (at http://localhost:4200/quote)
-   npm start
+1. Install all the node packages: npm install
+2. Run the angular application (at http://localhost:4200/quote): npm start
 
 ## Endpoints and URLs
 The WebApi has two endpoints and swagger endpoint:
