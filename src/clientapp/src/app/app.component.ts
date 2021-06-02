@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ExchangeServiceService } from './services/exchange-service/exchange-service.service';
 
 @Component({
   selector: 'app-root',
@@ -8,23 +7,7 @@ import { ExchangeServiceService } from './services/exchange-service/exchange-ser
 })
 export class AppComponent {
   title = 'ClientApp';
-  errorMessage:string = '';
-  busy = false;
-  isoCodeForInput = 'USD';
-  isoCodeForRequest = '';
-  exchangeRate: any = null;
 
-  constructor(private exchangeRateService : ExchangeServiceService) {
+  constructor() {
   }
-
-  getExchangeRate() {
-    this.isoCodeForRequest = this.isoCodeForInput;    
-    this.busy = true;
-    this.exchangeRateService.getExchangeRate(this.isoCodeForRequest)
-      .subscribe( (ret: any)=> {
-        this.busy = false;
-        this.exchangeRate = ret.Data;
-        console.log(ret);
-      });
-   }
 }

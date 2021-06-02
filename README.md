@@ -16,6 +16,7 @@ Backend Project
 Frontend Project
 - Developed with Angular 12.
 - Using HttpClient with Service to fetch data from Backend WebApi.
+- WebApi URL configurable in services/exchange-service.service.ts
 - Quote and Purchase features implemented.
 
 **Technologies used**: Angular 12, ASP.Net Core WebApi 5, Entity Framework Core, SQL Server 2019.
