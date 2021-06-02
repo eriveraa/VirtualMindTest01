@@ -18,7 +18,7 @@ Frontend Project
 - Using HttpClient with Service to fetch data from Backend WebApi.
 - Quote and Purchase features implemented.
 
-**Technologies used**: ASP.Net Core WebApi 5, Entity Framework Core, SQL Server 2019.
+**Technologies used**: Angular 12, ASP.Net Core WebApi 5, Entity Framework Core, SQL Server 2019.
 
 ## Database creation
 
