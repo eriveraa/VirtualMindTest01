@@ -1,0 +1,28 @@
+<app-view-exchange-rates></app-view-exchange-rates>
+
+<h1>Purchase</h1>
+<label>ISO Currency Code</label><br/>
+<input type="text" class="form-control" id="isoCode" required [(ngModel)]="isoCode" name="isoCode"> <br/><br/>
+
+<label>User Id</label><br/>
+<input type="text" class="form-control" id="userId" required [(ngModel)]="userId" name="userId"> <br/><br/>
+
+<label>Ammount (in Argentinian Pesos)</label><br/>
+<input type="text" class="form-control" id="amountArs" required [(ngModel)]="amountArs" name="amountArs"> <br/><br/>
+
+<button (click)="purchase()" *ngIf="!busy">Purchase!</button><br/>
+
+<div *ngIf="busy">
+  Purchasing, please wait...
+</div>
+
+<div *ngIf="!busy && purchaseRet && !errorMsg">
+  <br/>
+  <div style="font-weight: bold;">TRANSACTION SUCCESSFUL!</div>
+  {{purchaseRet | json}}
+</div>
+
+<div *ngIf="errorMsg && !busy" style="color: red;">
+    <br/>
+    {{errorMsg}}
+</div>
