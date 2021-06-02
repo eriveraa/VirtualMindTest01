@@ -94,7 +94,7 @@ namespace EMT.API
                 var exception = exceptionHandlerPathFeature.Error;
                 await context.Response.WriteAsJsonAsync(new
                 {
-                    Error = exception.Message,
+                    ServerErrorMessage = exception.Message,
                     ExceptionMessage = exception.ToString()
                 });
             }));

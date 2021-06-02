@@ -10,8 +10,9 @@ export class ViewExchangeRatesComponent implements OnInit {
   busy = false;
   exchangeRateUSD: any;
   exchangeRateBRL: any;
+  errorMsg: string = '';
 
-  constructor(private exchangeRateService : ExchangeServiceService ) { }
+  constructor(private exchangeRateService : ExchangeServiceService) { }
 
   ngOnInit(): void {
     this.refreshExchangeRates();
@@ -19,16 +20,27 @@ export class ViewExchangeRatesComponent implements OnInit {
 
   refreshExchangeRates() {
     this.busy = true;
+
+    // Get data for USD
     this.exchangeRateService.getExchangeRate('USD')
       .subscribe( (ret: any)=> {
         this.busy = false;
         this.exchangeRateUSD = ret.Data.Ammount;
+      }, 
+      error => {
+        this.busy = false;
+        this.errorMsg = error;
       });
   
+    // Get data for BRL
     this.exchangeRateService.getExchangeRate('BRL')
     .subscribe( (ret: any)=> {
       this.busy = false;
       this.exchangeRateBRL = ret.Data.Ammount;
+    }, 
+    error => {
+      this.busy = false;
+      this.errorMsg = error;
     });
   }
 
