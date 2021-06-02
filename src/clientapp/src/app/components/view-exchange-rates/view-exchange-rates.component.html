@@ -1,0 +1,14 @@
+<div>
+    <h1>View Exchange Rates</h1>
+  </div>
+  
+  <div *ngIf="busy">
+    Loading...
+  </div>
+  
+  <div *ngIf="!busy && exchangeRateUSD && exchangeRateBRL">
+    USD Exchange: {{exchangeRateUSD}} <br/>
+    BRL Exchange: {{exchangeRateBRL}} <br/>
+  </div>
+  
+  <button (click)="refreshExchangeRates()" *ngIf="!busy">Refresh Exchange Rates</button>  

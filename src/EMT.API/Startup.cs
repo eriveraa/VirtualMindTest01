@@ -40,6 +40,10 @@ namespace EMT.API
             services.AddHttpClient();
 
             // ------------------------------------------------------------------------------------
+            // Add CORS (for invocations from Angular/React/SPAs)
+            services.AddCors();
+
+            // ------------------------------------------------------------------------------------
             // Adding Swagger
             services.AddSwaggerGen(c =>
             {
@@ -73,6 +77,14 @@ namespace EMT.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            // ------------------------------------------------------------------------------------
+            // global cors policy
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials()); // allow credentials
 
             // ------------------------------------------------------------------------------------
             // Global Exception Handler
