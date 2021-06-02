@@ -2,6 +2,7 @@
 
 The project covers the following:
 
+Backend Project
 - A solution with different layers and projects (API, Business logic, Data Access Layer and Common).
 - Global exception handler in Startup.cs
 - Logging capabilities with Serilog (Console and File).
@@ -11,6 +12,11 @@ The project covers the following:
 - Business Logic Layer with object-oriented design.
 - Data access with Entity Framework Core and SQL Server.
 - HttpClient with best practices to avoid memory leaking.
+
+Frontend Project
+- Developed with Angular 12.
+- Using HttpClient with Service to fetch data from Backend WebApi.
+- Quote and Purchase features implemented.
 
 **Technologies used**: ASP.Net Core WebApi 5, Entity Framework Core, SQL Server 2019.
 
@@ -95,17 +101,19 @@ GO
 
 ```
 
-## Run and execute
+## Run and execute the WebApi
 
 Compile the solution and RUN the EMT.API project in Visual Studio:
 ![image info](./Screenshots/screen01.png)
 
+## Run and execute the FrontEnd app
 
+1. Install all the node packages   
+   npm install
+2. Run the angular application (at http://localhost:4200/quote)
+   npm start
 
-## Endpoints
-
-Compile the solution and RUN the EMT.API project in Visual Studio.:
-
+## Endpoints and URLs
 The WebApi has two endpoints and swagger endpoint:
 
 1. Endpoint for retrieving exchange rate.
@@ -128,10 +136,12 @@ The WebApi has two endpoints and swagger endpoint:
    ```
 3. Swagger endpoint: https://localhost:5001/swagger/index.html
 
+The Frontend (Angular) project can be accessed at :
 
-## Credits
-Created by Eduardo (eriveraa@gmail.com)
-
+1. Url for retrieving exchange rates:
+   http://localhost:4200/quote
+2. Url to perform a purchase: 
+   http://localhost:4200/purchase
 
 ## Project requirements
 Create a web app API using .NET to expose two endpoints:
@@ -172,3 +182,13 @@ Create a web app API using .NET to expose two endpoints:
    ● Object-oriented development
    ● Writing unit tests for services
    ● Errors log
+
+Angular (optional)
+Create a very simple app in Angular 2+ with two routes:
+a) /quote will show the exchange rate of the dollar and real currencies by using the API
+developed in the previous step. Add a button for refreshing the exchange rates.
+b) /purchase will list the same exchange rates on a) and a mini purchase form consisting
+of three text fields (user ID, currency, amount to purchase in pesos) and a button to
+create the transaction through our API. It will also show the result of the transaction.
+● Display a loading wheel while the transaction is in progress.
+● We will value the implementation of NgRx, Application State Management, within the app.
